@@ -8,11 +8,8 @@ namespace AOC2018_CSharp
 {
 	public class DayOne
 	{
-		public DayOne()
-		{
-		}
-
-		public int GetFrequency(string[] dataArray) => dataArray.Aggregate(0, (sum, val) => sum + Convert.ToInt32(val));
+		
+		public int GetFrequency(string[] dataArray) => dataArray.Sum(int.Parse);
 		
 		public int GetRepeatingFrequency(string[] dataArray)
 		{
