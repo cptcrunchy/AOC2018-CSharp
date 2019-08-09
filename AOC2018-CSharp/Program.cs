@@ -5,25 +5,21 @@ using System.Linq;
 
 namespace AOC2018_CSharp
 {
-	public class Program
+	public static class Program
 	{
-		private const string V = @"W:\Personal\Advent-of-Code\AOC2018-CSharp\AOC2018-CSharp\Days\";
-
-		protected Program() {}
+		private static readonly string _rootPath = @"W:\Personal\Advent-of-Code\AOC2018-CSharp\AOC2018-CSharp\Days\";
 
 		static void Main(string[] args)
 		{
-			string rootPath = V;
-			string dayOneFilePath = @"Inputs\DayOneInput.txt";
-			using StreamReader sr = new StreamReader(string.Concat(rootPath, dayOneFilePath));
-			string[] data = sr.ReadToEnd().Split("\r\n").ToArray();
+	
+			var dayOneFilePath = string.Concat(_rootPath, @"Inputs\DayOneInput.txt");
+			using StreamReader sr = new StreamReader(dayOneFilePath);
+			var dayOneData = sr.ReadToEnd().Split("\r\n").ToArray();
 			sr.Dispose();
 
-			var dayOne = new DayOne();
-			Console.WriteLine(dayOne.GetFrequency(data));
-			Console.WriteLine(dayOne.GetRepeatingFrequency(data));
-
-
+			DayOne dayOne = new DayOne();
+			Console.WriteLine(dayOne.GetFrequency(dayOneData));
+			Console.WriteLine(dayOne.GetRepeatingFrequency(dayOneData));
 	
 		}
 	}
