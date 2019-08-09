@@ -26,11 +26,7 @@ namespace AOC2018_CSharp
 				loopCounter++;
 				foreach (string line in dataArray)
 				{
-
-					string operand = line.Substring(0, 1);
-					int value = Convert.ToInt32(line.Substring(1));
-					freq = (operand.Equals("+")) ? freq + value : freq - value;
-
+					freq += Convert.ToInt32(line);
 					if (freqArray.Contains(freq))
 					{
 						return freq;
