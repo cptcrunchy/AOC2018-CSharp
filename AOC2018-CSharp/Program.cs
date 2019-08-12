@@ -13,14 +13,19 @@ namespace AOC2018_CSharp
 		{
 	
 			var dayOneFilePath = string.Concat(_rootPath, @"Inputs\DayOneInput.txt");
-			using StreamReader sr = new StreamReader(dayOneFilePath);
-			var dayOneData = sr.ReadToEnd().Split("\r\n").ToArray();
+			var dayTwoFilePath = string.Concat(_rootPath, @"Inputs\DayTwoInput.txt");
+			using StreamReader sr = new StreamReader(dayTwoFilePath);
+			var data = sr.ReadToEnd().Split("\r\n").ToArray();
 			sr.Dispose();
 
-			DayOne dayOne = new DayOne();
-			Console.WriteLine(dayOne.GetFrequency(dayOneData));
-			Console.WriteLine(dayOne.GetRepeatingFrequency(dayOneData));
-	
+			//DayOne dayOne = new DayOne();
+			//Console.WriteLine(dayOne.GetFrequency(data));
+			//Console.WriteLine(dayOne.GetRepeatingFrequency(data));
+
+			DayTwo dayTwo = new DayTwo();
+			Console.WriteLine(dayTwo.GetCheckSum(data));
+
+
 		}
 	}
 }
