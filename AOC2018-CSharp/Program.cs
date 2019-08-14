@@ -24,7 +24,7 @@ namespace AOC2018_CSharp
 
 			DayTwo dayTwo = new DayTwo();
 			Console.WriteLine(dayTwo.GetCheckSum(data));
-
+			Console.WriteLine(dayTwo.GetMatchingChars(data));
 
 		}
 	}

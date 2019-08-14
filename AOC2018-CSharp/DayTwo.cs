@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AOC2018_CSharp
@@ -45,6 +46,35 @@ namespace AOC2018_CSharp
 			}
 
 			return wordsWithDoubles * wordsWithTriples;
+		}
+
+		public string GetMatchingChars(string[] words)
+		{
+			int smallestDiff = int.MaxValue;
+			string firstWord = string.Empty;
+			string secondWord = string.Empty;
+
+			foreach(var wordOne in words)
+			{
+				foreach(var wordTwo in words)
+				{
+					if (wordOne != wordTwo)
+					{
+
+						var diff = wordOne.Where((c, i) => c != wordTwo[i]).Count();
+
+						if (diff < smallestDiff)
+						{
+							firstWord = wordOne;
+							secondWord = wordTwo;
+							smallestDiff = diff;
+						}
+					}
+					
+				}
+			}
+
+			return string.Join("", firstWord.Intersect(secondWord));
 		}
 	}
 }
