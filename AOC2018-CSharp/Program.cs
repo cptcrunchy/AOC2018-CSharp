@@ -11,10 +11,13 @@ namespace AOC2018_CSharp
 
 		static void Main(string[] args)
 		{
-	
-			var dayOneFilePath = string.Concat(_rootPath, @"Inputs\DayOneInput.txt");
-			var dayTwoFilePath = string.Concat(_rootPath, @"Inputs\DayTwoInput.txt");
-			using StreamReader sr = new StreamReader(dayTwoFilePath);
+
+			//var dayOneFilePath = string.Concat(_rootPath, @"Inputs\DayOneInput.txt");
+			//var dayTwoFilePath = string.Concat(_rootPath, @"Inputs\DayTwoInput.txt");
+
+			var dayThreeFilePath = string.Concat(_rootPath, @"Inputs\DayThreeInput.txt");
+			using StreamReader sr = new StreamReader(dayThreeFilePath);
+
 			var data = sr.ReadToEnd().Split("\r\n").ToArray();
 			sr.Dispose();
 
@@ -22,9 +25,12 @@ namespace AOC2018_CSharp
 			//Console.WriteLine(dayOne.GetFrequency(data));
 			//Console.WriteLine(dayOne.GetRepeatingFrequency(data));
 
-			DayTwo dayTwo = new DayTwo();
-			Console.WriteLine(dayTwo.GetCheckSum(data));
-			Console.WriteLine(dayTwo.GetMatchingChars(data));
+			//DayTwo dayTwo = new DayTwo();
+			//Console.WriteLine(dayTwo.GetCheckSum(data));
+			//Console.WriteLine(dayTwo.GetMatchingChars(data));
+
+			DayThree dayThree = new DayThree();
+			Console.WriteLine(dayThree.GetCountOfOverlaps(data));
 
 		}
 	}
